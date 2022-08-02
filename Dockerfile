@@ -7,4 +7,6 @@ RUN xcaddy build \
 
 FROM caddy:${CADDY_VERSION}
 
+LABEL org.opencontainers.image.description="Caddy with dns.providers.cloudflare module"
+
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
