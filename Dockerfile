@@ -3,7 +3,8 @@ ARG CADDY_VERSION=2.6.2
 
 FROM caddy:${CADDY_VERSION}-builder AS builder
 
-RUN --mount=type=cache,target=/go/pkg xcaddy build \
+RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build \
+  xcaddy build \
   --with github.com/caddy-dns/cloudflare
 
 FROM caddy:${CADDY_VERSION}
