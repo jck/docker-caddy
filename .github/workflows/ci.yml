@@ -48,3 +48,4 @@ jobs:
           cache-to: type=registry,ref=ghcr.io/jck/caddy:buildcache,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=My multi-arch image
