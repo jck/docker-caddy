@@ -44,9 +44,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          cache-from: type=registry,ref=ghcr.io/jck/caddy
-          cache-to: type=registry,ref=ghcr.io/jck/caddy,mode=max
-          # cache-from: type=gha
-          # cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=ghcr.io/jck/caddy:buildcache
+          cache-to: type=registry,ref=ghcr.io/jck/caddy:buildcache,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
